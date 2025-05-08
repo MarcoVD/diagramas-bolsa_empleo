@@ -1,0 +1,10 @@
+graph LR
+    GG[Usuario introduce/modifica contraseña] --> HH[Verificar longitud mínima];
+    HH --> II[Verificar presencia de mayúsculas];
+    II --> JJ[Verificar presencia de minúsculas];
+    JJ --> KK[Verificar presencia de números];
+    KK --> LL[Verificar presencia de caracteres especiales];
+    LL -- Cumple todo --> MM[Contraseña válida];
+    LL -- No cumple alguna --> NN[Mostrar requisitos de contraseña];
+    NN --> GG;
+    MM --> OO[Fin Validación];

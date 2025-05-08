@@ -1,0 +1,21 @@
+graph TD
+    A[Usuario accede a Mis Postulaciones] --> B[Selecciona una postulación];
+    B --> C{¿La vacante aún está abierta?};
+    C -- Sí --> D{¿Usuario confirma retiro?};
+    D -- Sí --> E[Actualizar el estado de la postulación a Retirada];
+    E --> F[Mostrar mensaje de Postulación retirada];
+    D -- No --> G[Mostrar mensaje de No se puede retirar la postulación];
+    C -- No --> G;
+    F --> H[Fin];
+    G --> H;
+
+
+
+%%     %% Comentarios 
+
+%%     I.4.1 Seleccionar CV para Postulación: Muestra el proceso de elegir un CV antes de postularse.
+%% I.4.2 Enviar Carta de Presentación: Detalla la opción de adjuntar o escribir una carta de presentación.
+%% I.4.3 Registrar Fecha y Hora de Postulación: Describe el registro de la postulación en el sistema.
+%% I.4.4 Enviar Notificación de Postulación: Ilustra el envío de correos de confirmación tanto al interesado como al reclutador.
+%% I.4.5 Ver Estado de Postulaciones: Muestra cómo el usuario puede consultar el estado de sus postulaciones.
+%% I.4.7 Retirar una Postulación: Detalla el proceso para que un usuario retire una postulación si la vacante aún está abierta.

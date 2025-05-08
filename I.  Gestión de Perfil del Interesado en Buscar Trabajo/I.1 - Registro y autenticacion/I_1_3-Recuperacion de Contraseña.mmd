@@ -1,0 +1,12 @@
+graph LR
+    W[Inicio Recuperación] --> X{¿Usuario solicita recuperación e introduce correo?};
+    X -- Sí --> Y[Buscar usuario por correo];
+    Y -- Usuario encontrado --> Z[Generar token de recuperación único];
+    Z --> AA[Guardar token y asociarlo al usuario];
+    AA --> BB[Enviar correo con enlace de recuperación (con token)];
+    BB --> CC[Mostrar mensaje de correo enviado];
+    CC --> DD[Fin Recuperación];
+    Y -- Usuario no encontrado --> EE[Mostrar error de correo no encontrado];
+    EE --> X;
+    X -- No --> FF[Mostrar formulario de recuperación];
+    FF --> W;

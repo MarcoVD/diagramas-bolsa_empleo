@@ -1,0 +1,12 @@
+graph LR
+    A[Inicio Recuperación Reclutador] --> B{¿Reclutador solicita recuperación e introduce correo?};
+    B -- Sí --> C[Buscar reclutador por correo];
+    C -- Reclutador encontrado --> D[Generar token de recuperación único];
+    D --> E[Guardar token y asociarlo al reclutador];
+    E --> F[Enviar correo con enlace de recuperación con token];
+    F --> G[Mostrar mensaje de correo enviado];
+    G --> H[Fin Recuperación];
+    C -- Reclutador no encontrado --> I[Mostrar error de correo no encontrado];
+    I --> B;
+    B -- No --> J[Mostrar formulario de recuperación para reclutadores];
+    J --> A;

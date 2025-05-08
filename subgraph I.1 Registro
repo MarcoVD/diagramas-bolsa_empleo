@@ -1,0 +1,75 @@
+subgraph I.1 Registro
+    direction LR
+    A[Inicio Registro] --> B{¿Usuario introduce datos?};
+    B -- Sí --> C[Validar formato de datos];
+    C --> D{¿Correo electrónico ya existe?};
+    D -- No --> E[Validar fortaleza de contraseña];
+    E -- Cumple requisitos --> F[Guardar datos del usuario];
+    F --> G[Enviar correo de confirmación];
+    G --> H[Registro Exitoso];
+    E -- No cumple --> I[Mostrar error de contraseña];
+    I --> B;
+    D -- Sí --> J[Mostrar error de correo existente];
+    J --> B;
+    B -- No --> K[Mostrar formulario de registro];
+    K --> A;
+    H --> L[Fin Registro];
+end
+
+subgraph I.1 Autenticación
+    direction LR
+    M[Inicio Sesión] --> N{¿Usuario introduce correo y contraseña?};
+    N -- Sí --> O[Buscar usuario por correo];
+    O -- Usuario encontrado --> P{¿Contraseña coincide?};
+    P -- Sí --> Q[Crear sesión de usuario];
+    Q --> R[Mostrar panel de control];
+    P -- No --> S[Mostrar error de contraseña incorrecta];
+    S --> N;
+    O -- Usuario no encontrado --> T[Mostrar error de usuario no encontrado];
+    T --> N;
+    N -- No --> U[Mostrar formulario de inicio de sesión];
+    U --> M;
+    R --> V[Fin Sesión];
+end
+
+subgraph I.1 Recuperación de Contraseña
+    direction LR
+    W[Inicio Recuperación] --> X{¿Usuario solicita recuperación e introduce correo?};
+    X -- Sí --> Y[Buscar usuario por correo];
+    Y -- Usuario encontrado --> Z[Generar token de recuperación único];
+    Z --> AA[Guardar token y asociarlo al usuario];
+    AA --> BB[Enviar correo con enlace de recuperación (con token)];
+    BB --> CC[Mostrar mensaje de correo enviado];
+    CC --> DD[Fin Recuperación];
+    Y -- Usuario no encontrado --> EE[Mostrar error de correo no encontrado];
+    EE --> X;
+    X -- No --> FF[Mostrar formulario de recuperación];
+    FF --> W;
+end
+
+subgraph I.1 Validación de Contraseña
+    direction LR
+    GG[Usuario introduce/modifica contraseña] --> HH[Verificar longitud mínima];
+    HH --> II[Verificar presencia de mayúsculas];
+    II --> JJ[Verificar presencia de minúsculas];
+    JJ --> KK[Verificar presencia de números];
+    KK --> LL[Verificar presencia de caracteres especiales];
+    LL -- Cumple todo --> MM[Contraseña válida];
+    LL -- No cumple alguna --> NN[Mostrar requisitos de contraseña];
+    NN --> GG;
+    MM --> OO[Fin Validación];
+end
+
+subgraph I.1 Cierre de Sesión
+    direction LR
+    PP[Usuario solicita cerrar sesión] --> QQ[Invalidar sesión actual];
+    QQ --> RR[Redirigir a página de inicio/login];
+    RR --> SS[Fin Cierre de Sesión];
+end
+
+direction TB
+    I1[Registro y Autenticación] --> I1_Registro
+    I1 --> I1_Autenticación
+    I1 --> I1_Recuperación
+    I1 --> I1_Validación
+    I1 --> I1_Cierre

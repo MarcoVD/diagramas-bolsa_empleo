@@ -1,0 +1,11 @@
+graph TD
+    A[Usuario selecciona CV] --> B{¿La vacante requiere carta de presentación?};
+    B -- Sí --> C[Mostrar editor de texto para carta de presentación opcional];
+    C --> D{¿Usuario escribe o adjunta carta?};
+    D -- Sí --> E[Pasar al registro de postulación I.4.3];
+    D -- No --> F[¿Usuario decide postularse sin carta?];
+    F -- Sí --> E;
+    F -- No --> G[Volver a selección de CV];
+    G --> A;
+    B -- No --> E;
+    E --> H[Fin];

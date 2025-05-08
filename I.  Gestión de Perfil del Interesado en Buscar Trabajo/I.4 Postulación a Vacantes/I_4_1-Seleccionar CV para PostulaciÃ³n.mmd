@@ -1,0 +1,10 @@
+graph TD
+    A[Usuario visualiza detalle de vacante] --> B{¿Usuario desea postularse?};
+    B -- Sí --> C[Mostrar lista de CVs del usuario];
+    C --> D{¿Usuario selecciona un CV?};
+    D -- Sí --> E[Pasar al envío de carta de presentación I.4.2];
+    D -- No --> F[Mostrar mensaje de Debe seleccionar un CV];
+    F --> C;
+    B -- No --> G[Volver al detalle de la vacante];
+    G --> H[Fin];
+    E --> H;

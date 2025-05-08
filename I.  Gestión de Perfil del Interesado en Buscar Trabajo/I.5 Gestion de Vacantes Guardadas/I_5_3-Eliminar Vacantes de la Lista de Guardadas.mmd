@@ -1,0 +1,15 @@
+graph TD
+    A[Usuario visualiza la lista de vacantes guardadas] --> B[Selecciona una vacante para eliminar];
+    B --> C{¿Usuario confirma eliminación?};
+    C -- Sí --> D[Eliminar la vacante de la lista de guardadas del usuario];
+    D --> E[Mostrar mensaje de Vacante eliminada];
+    C -- No --> F[Volver a la lista de vacantes guardadas];
+    E --> G[Fin];
+    F --> G;
+
+
+    %% Desglose de los Diagramas de Flujo de I.5:
+
+    %% I.5.1 Guardar Vacantes de Interés: Muestra el proceso para que un usuario guarde una vacante que le interesa, verificando previamente si ya la había guardado.
+    %% I.5.2 Ver la Lista de Vacantes Guardadas: Describe cómo el usuario puede acceder y visualizar su lista de vacantes guardadas, con la opción de ver los detalles y eliminar vacantes.
+    %% I.5.3 Eliminar Vacantes de la Lista de Guardadas: Detalla el proceso para eliminar una vacante de la lista de guardadas, incluyendo una confirmación por parte del usuario.

@@ -1,0 +1,16 @@
+graph LR
+    A[Inicio Registro] --> B{¿Usuario introduce datos?};
+    B -- Sí --> C[Validar formato de datos];
+    C --> D{¿Correo electrónico ya existe?};
+    D -- No --> E[Validar fortaleza de contraseña];
+    E -- Cumple requisitos --> F[Guardar datos del usuario];
+    F --> G[Enviar correo de confirmación];
+    G --> H[Registro Exitoso];
+    E -- No cumple --> I[Mostrar error de contraseña];
+    I --> B;
+    D -- Sí --> J[Mostrar error de correo existente];
+    J --> B;
+    B -- No --> K[Mostrar formulario de registro];
+    K --> A;
+    H --> L[Fin Registro];
+

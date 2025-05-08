@@ -1,0 +1,16 @@
+graph LR
+    A[Inicio Sesión Reclutador] --> B{¿Reclutador introduce correo y contraseña?};
+    B -- Sí --> C[Buscar reclutador por correo];
+    C -- Reclutador encontrado --> D{¿Cuenta aprobada por el administrador?};
+    D -- Sí --> E{¿Contraseña coincide?};
+    E -- Sí --> F[Crear sesión de reclutador];
+    F --> G[Mostrar panel de control del reclutador];
+    E -- No --> H[Mostrar error de contraseña incorrecta];
+    H --> B;
+    D -- No --> I[Mostrar mensaje de Cuenta pendiente de aprobación];
+    I --> B;
+    C -- Reclutador no encontrado --> J[Mostrar error de usuario no encontrado];
+    J --> B;
+    B -- No --> K[Mostrar formulario de inicio de sesión para reclutadores];
+    K --> A;
+    G --> L[Fin Sesión];

@@ -1,0 +1,15 @@
+graph TD
+    A[Inicio Crear/Editar CV] --> B{¿Usuario autenticado?};
+    B -- Sí --> C[Mostrar formulario de CV campos vacíos o con datos existentes];
+    C --> D{¿Usuario guarda o actualiza información?};
+    D -- Sí --> E[Validar datos del CV I.2.3];
+    E -- Datos válidos --> F[Guardar/Actualizar información del CV en la base de datos];
+    F --> G[Mostrar mensaje de CV guardado exitosamente];
+    D -- No --> H[¿Usuario solicita previsualización?];
+    H -- Sí --> I[Generar vista previa del CV I.2.4];
+    I --> J[Mostrar vista previa];
+    B -- No --> K[Redirigir a página de inicio de sesión];
+    G --> L[Fin Crear/Editar CV];
+    J --> L;
+    K --> L;
+    H -- No --> L;

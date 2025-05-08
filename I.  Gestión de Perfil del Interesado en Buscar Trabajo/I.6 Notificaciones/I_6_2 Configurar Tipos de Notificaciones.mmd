@@ -1,0 +1,16 @@
+graph TD
+    A[Usuario accede a Configuración de Notificaciones] --> B[Mostrar lista de tipos de notificaciones disponibles registro, recuperación de contraseña, postulación, estado de postulación, nuevas vacantes guardadas, modificaciones de vacantes postuladas];
+    B --> C[Permitir al usuario activar o desactivar cada tipo de notificación mediante checkboxes/switches];
+    C --> D[Guardar las preferencias de notificación del usuario en la base de datos];
+    D --> E[Mostrar mensaje de Preferencias de notificación guardadas];
+    E --> F[Fin Configuración];
+
+
+%%     comentarios
+%%     Desglose de los Diagramas de Flujo de I.6:
+
+%%     I.6.1 Envío de Notificaciones por Correo Electrónico: Este diagrama generaliza el proceso de envío de cualquier tipo de notificación por correo electrónico. Los eventos disparadores específicos se detallaron en las secciones correspondientes (ej., el registro dispara la notificación de confirmación, la postulación dispara la notificación de confirmación de postulación, etc.).
+%%     I.6.2 Configurar Tipos de Notificaciones: Muestra cómo el usuario puede gestionar qué tipos de notificaciones desea recibir, activando o desactivando las opciones disponibles.
+
+%% Con esto, hemos transpuesto todas las historias de usuario proporcionadas a diagramas de flujo. Espero que te sean de gran utilidad para visualizar y entender el funcionamiento del sistema de gestión de interesados en la búsqueda de trabajo.
+

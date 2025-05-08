@@ -1,0 +1,12 @@
+
+graph LR
+    A[Inicio Registro Reclutador] --> B{¿Reclutador introduce info. secretaría y contacto?};
+    B -- Sí --> C[Validar información ingresada II.1.4];
+    C -- Datos válidos --> D[Guardar información de la secretaría y del reclutador];
+    D --> E[Notificar al administrador para aprobación II.3.4];
+    E --> F[Mostrar mensaje de Registro exitoso. Esperando aprobación];
+    C -- Datos inválidos --> G[Mostrar errores de validación];
+    G --> B;
+    B -- No --> H[Mostrar formulario de registro para reclutadores];
+    H --> A;
+    F --> I[Fin Registro];

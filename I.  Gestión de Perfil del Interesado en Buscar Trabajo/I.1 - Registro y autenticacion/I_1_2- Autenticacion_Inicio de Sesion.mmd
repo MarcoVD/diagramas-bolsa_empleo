@@ -1,0 +1,14 @@
+
+graph LR
+    M[Inicio Sesión] --> N{¿Usuario introduce correo y contraseña?};
+    N -- Sí --> O[Buscar usuario por correo];
+    O -- Usuario encontrado --> P{¿Contraseña coincide?};
+    P -- Sí --> Q[Crear sesión de usuario];
+    Q --> R[Mostrar panel de control];
+    P -- No --> S[Mostrar error de contraseña incorrecta];
+    S --> N;
+    O -- Usuario no encontrado --> T[Mostrar error de usuario no encontrado];
+    T --> N;
+    N -- No --> U[Mostrar formulario de inicio de sesión];
+    U --> M;
+    R --> V[Fin Sesión];

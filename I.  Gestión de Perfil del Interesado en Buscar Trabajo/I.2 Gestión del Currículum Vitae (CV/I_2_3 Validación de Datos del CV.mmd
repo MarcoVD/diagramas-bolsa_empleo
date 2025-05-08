@@ -1,0 +1,15 @@
+graph TD
+    A[Inicio Validación CV] --> B{¿Campo obligatorio vacío?};
+    B -- Sí --> C[Mostrar error: Campo obligatorio];
+    B -- No --> D{¿Formato de datos incorrecto? ej. correo, fecha};
+    D -- Sí --> E[Mostrar error: Formato incorrecto];
+    D -- No --> F{¿Longitud de texto excedida?};
+    F -- Sí --> G[Mostrar error: Longitud excedida];
+    F -- No --> H{¿Tipo de datos incorrecto? ej. texto en campo numérico};
+    H -- Sí --> I[Mostrar error: Tipo de dato incorrecto];
+    H -- No --> J[Validación Exitosa];
+    C --> J;
+    E --> J;
+    G --> J;
+    I --> J;
+    J --> K[Fin Validación CV];

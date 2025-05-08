@@ -1,0 +1,10 @@
+graph TD
+    A[Usuario visualiza detalle de vacante] --> B{¿Usuario desea guardar la vacante?};
+    B -- Sí --> C[Verificar si la vacante ya está guardada];
+    C -- No guardada --> D[Guardar la vacante en la lista de guardadas del usuario];
+    D --> E[Mostrar mensaje de Vacante guardada];
+    C -- Ya guardada --> F[Mostrar mensaje de La vacante ya está en tu lista];
+    B -- No --> G[Continuar visualizando la vacante];
+    E --> H[Fin];
+    F --> H;
+    G --> H;

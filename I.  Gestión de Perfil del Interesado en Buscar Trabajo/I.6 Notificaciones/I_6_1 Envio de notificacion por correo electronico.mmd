@@ -1,0 +1,8 @@
+graph TD
+    A[Evento Disparador ej., registro, postulación, cambio de estado] --> B[Obtener datos necesarios para la notificación usuario, vacante, estado, etc.];
+    B --> C[Determinar tipo de notificación];
+    C --> D[Generar contenido del correo electrónico personalizado según el tipo];
+    D --> E[Obtener dirección de correo electrónico del destinatario];
+    E --> F[Enviar correo electrónico I.6.1.x];
+    F --> G[Registrar envío de notificación logs];
+    G --> H[Fin Envío Notificación];
