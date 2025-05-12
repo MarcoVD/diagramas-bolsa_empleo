@@ -1,0 +1,40 @@
+graph TD
+    A[Inicio Validación Vacante] --> B{¿Título de la vacante vacío?};
+    B -- Sí --> C[Mostrar error: Título es obligatorio];
+    B -- No --> D{¿Descripción detallada vacía?};
+    D -- Sí --> E[Mostrar error: Descripción es obligatoria];
+    D -- No --> F{¿Ubicación estado, municipio vacía?};
+    F -- Sí --> G[Mostrar error: Ubicación es obligatoria];
+    F -- No --> H{¿Salario con formato incorrecto?};
+    H -- Sí --> I[Mostrar error: Formato de salario incorrecto];
+    H -- No --> J{¿Categoría de la vacante vacía?};
+    J -- Sí --> K[Mostrar error: Categoría es obligatoria];
+    J -- No --> L{¿Tipo de empleo vacío?};
+    L -- Sí --> M[Mostrar error: Tipo de empleo es obligatorio];
+    L -- No --> N{¿Fecha límite de postulación vacía?};
+    N -- Sí --> O[Mostrar error: Fecha límite es obligatoria];
+    N -- No --> P{¿Fecha límite anterior a la fecha de inicio?};
+    P -- Sí --> Q[Mostrar error: Fecha límite debe ser posterior a la de inicio];
+    P -- No --> R{¿Número máximo de postulantes no válido?};
+    R -- Sí --> S[Mostrar error: Número de postulantes no válido];
+    R -- No --> T[Datos de contacto del reclutador vacíos?];
+    T -- Sí --> U[Mostrar error: Datos de contacto son obligatorios];
+    T -- No --> V[Validación Exitosa];
+    C --> V;
+    E --> V;
+    G --> V;
+    I --> V;
+    K --> V;
+    M --> V;
+    O --> V;
+    Q --> V;
+    S --> V;
+    U --> V;
+    V --> W[Fin Validación Vacante];
+
+%% Comentario
+%%     II.3.3 Guardar Vacantes como Borrador: Este flujo ya está integrado en el diagrama de II.3.1 Publicar Nuevas Vacantes.
+
+%% II.3.4 Notificar al Administrador: Este también está integrado en el flujo de II.3.1 Publicar Nuevas Vacantes.
+
+%% Con esto, hemos cubierto la sección II.3 Publicación de Vacantes. ¿Continuamos con II.4 Gestión de Postulaciones?

@@ -1,0 +1,13 @@
+graph TD
+    A[Reclutador en la lista de postulaciones] --> B[Mostrar opciones de filtro];
+    B --> C{¿Filtrar por fecha de postulación?};
+    C -- Sí --> D[Mostrar filtro por rango de fechas];
+    B --> E{¿Filtrar por experiencia del candidato?};
+    E -- Sí --> F[Mostrar filtro por nivel de experiencia];
+    B --> G{¿Filtrar por habilidades del candidato?};
+    G -- Sí --> H[Mostrar filtro por lista de habilidades];
+    D --> I[Aplicar filtro y mostrar resultados];
+    F --> I;
+    H --> I;
+    B -- No aplica filtro --> I[Mostrar todas las postulaciones];
+    I --> J[Fin Filtrado];

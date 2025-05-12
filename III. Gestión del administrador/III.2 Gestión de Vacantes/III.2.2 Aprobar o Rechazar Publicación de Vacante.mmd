@@ -1,0 +1,10 @@
+graph TD
+    A[Administrador accede a 'Gestión de Vacantes'] --> B[Mostrar lista de vacantes pendientes de aprobación];
+    B --> C[Administrador selecciona una vacante];
+    C --> D{¿Administrador selecciona acción Aprobar/Rechazar?};
+    D -- Aprobar --> E[Cambiar estado de la vacante a 'publicada'];
+    D -- Rechazar --> F[Cambiar estado de la vacante a 'rechazada' opcionalmente solicitar motivo];
+    E --> G[Notificar al reclutador sobre la aprobación/rechazo];
+    F --> G;
+    G --> H[Mostrar mensaje de éxito];
+    H --> I[Fin Aprobar/Rechazar];

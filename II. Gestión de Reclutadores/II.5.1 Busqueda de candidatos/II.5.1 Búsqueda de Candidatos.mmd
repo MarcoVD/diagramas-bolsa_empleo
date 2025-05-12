@@ -1,0 +1,10 @@
+graph TD
+    A[Inicio Búsqueda de Candidatos] --> B{¿Reclutador introduce criterios de búsqueda palabras clave, filtros};
+    B -- Sí --> C[Consultar la base de datos de candidatos con los criterios];
+    C --> D[Mostrar resultados de búsqueda de candidatos II.5.3];
+    B -- No --> E[Mostrar formulario de búsqueda con filtros II.5.2];
+    E --> F[Reclutador aplica filtros II.5.2];
+    F --> G[Consultar la base de datos de candidatos con los filtros];
+    G --> D;
+    D --> H[Permitir contactar directamente a candidatos II.5.4];
+    H --> I[Fin Búsqueda de Candidatos];

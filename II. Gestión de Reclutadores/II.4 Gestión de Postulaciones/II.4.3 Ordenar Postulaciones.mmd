@@ -1,0 +1,10 @@
+graph TD
+    A[Reclutador en la lista de postulaciones] --> B[Mostrar opciones de ordenamiento];
+    B --> C{¿Ordenar por fecha de postulación?};
+    C -- Sí --> D[Ordenar por fecha ascendente/descendente];
+    B --> E{¿Ordenar por relevancia?};
+    E -- Sí --> F[Ordenar según coincidencia con requisitos de la vacante];
+    D --> G[Mostrar lista ordenada];
+    F --> G;
+    B -- No ordena --> G[Mostrar lista sin orden específico o por defecto];
+    G --> H[Fin Ordenamiento];

@@ -1,0 +1,20 @@
+graph TD
+    A[Inicio Publicar Vacante] --> B{¿Reclutador autenticado?};
+    B -- Sí --> C[Mostrar formulario de publicación de vacante con campos II.3.1.x];
+    C --> D{¿Reclutador guarda como borrador?};
+    D -- Sí --> E[Guardar información de la vacante como borrador];
+    E --> F[Mostrar mensaje de Vacante guardada como borrador];
+    C --> G{¿Reclutador completa todos los campos obligatorios II.3.1.9, II.3.1.10?};
+    G -- No --> H[Mostrar errores de campos obligatorios];
+    G -- Sí --> I[Validar información de la vacante II.3.2];
+    I -- Datos válidos --> J{¿Reclutador confirma publicación?};
+    J -- Sí --> K[Guardar información de la vacante como activa];
+    K --> L[Notificar al administrador II.3.4];
+    L --> M[Mostrar mensaje de Vacante publicada exitosamente];
+    I -- Datos inválidos --> N[Mostrar errores de validación de la vacante];
+    N --> C;
+    H --> C;
+    B -- No --> O[Redirigir a página de inicio de sesión];
+    F --> P[Fin Publicar Vacante];
+    M --> P;
+    O --> P;

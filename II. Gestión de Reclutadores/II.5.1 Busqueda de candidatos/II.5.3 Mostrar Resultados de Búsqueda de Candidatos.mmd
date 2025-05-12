@@ -1,0 +1,7 @@
+graph TD
+    A[Recibir lista de candidatos coincidentes] --> B[Iterar sobre cada candidato];
+    B --> C[Extraer información relevante del candidato nombre, habilidades principales, experiencia, ubicación, nivel educativo];
+    C --> D[Formatear vista previa de la información];
+    D --> E[Mostrar vista previa en lista];
+    B -- Último candidato --> F[Fin Mostrar Resultados];
+    E --> B;

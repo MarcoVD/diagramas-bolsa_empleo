@@ -1,0 +1,9 @@
+graph TD
+    A[Inicio Búsqueda] --> B{¿Usuario introduce palabras clave?};
+    B -- Sí --> C[Consultar base de datos de vacantes con las palabras clave];
+    C --> D[Mostrar resultados de búsqueda I.3.3];
+    B -- No --> E[Mostrar formulario de búsqueda con filtros I.3.2];
+    E --> F[Usuario aplica filtros I.3.2];
+    F --> G[Consultar base de datos de vacantes con los filtros];
+    G --> D;
+    D --> H[Fin Búsqueda];

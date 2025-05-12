@@ -1,0 +1,7 @@
+graph TD
+    A[Recibir lista de vacantes coincidentes] --> B[Iterar sobre cada vacante];
+    B --> C[Extraer título, Secretaría, ubicación, fecha de publicación];
+    C --> D[Formatear vista previa];
+    D --> E[Mostrar vista previa en lista];
+    B -- Última vacante --> F[Fin Mostrar Resultados];
+    E --> B;

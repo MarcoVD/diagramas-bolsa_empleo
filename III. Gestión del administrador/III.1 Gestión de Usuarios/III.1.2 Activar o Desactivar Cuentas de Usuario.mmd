@@ -1,0 +1,13 @@
+graph TD
+    A[Administrador accede a 'Gestión de Usuarios'] --> B[Mostrar lista de usuarios con estado activo/inactivo];
+    B --> C[Administrador selecciona usuario];
+    C --> D{¿Administrador selecciona acción Activar/Desactivar?};
+    D -- Activar --> E[Cambiar estado del usuario a 'activo'];
+    D -- Desactivar --> F[Cambiar estado del usuario a 'inactivo´];
+    E --> G[Mostrar mensaje de éxito];
+    F --> G;
+    G --> H[Fin Activar/Desactivar];
+
+
+%%  comentarios
+%% III.1.3 Asignar Roles a los Usuarios: Este flujo ya está integrado en la creación y edición de usuarios (III.1.1).

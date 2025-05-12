@@ -1,0 +1,14 @@
+graph TD
+    A[Administrador accede a 'Gestión de Vacantes'] --> B[Mostrar lista de todas las vacantes];
+    B --> C[Administrador selecciona una vacante];
+    C --> D{¿Administrador selecciona acción Editar/Eliminar?};
+    D -- Editar --> E[Mostrar formulario de edición de la vacante con datos actuales];
+    E --> F[Administrador modifica datos];
+    F --> G[Validar datos modificados de la vacante];
+    G -- Datos válidos --> H[Actualizar información de la vacante];
+    G -- Datos inválidos --> E;
+    D -- Eliminar --> I[Mostrar confirmación de eliminación];
+    I -- Confirmar --> J[Eliminar la vacante];
+    H --> K[Mostrar mensaje de éxito];
+    J --> K;
+    K --> L[Fin Editar/Eliminar Vacante];

@@ -1,0 +1,19 @@
+graph TD
+    A[Administrador accede a Gestión de Categorías] --> B[Mostrar lista de categorías];
+    B --> C{¿Administrador selecciona acción Crear, Editar, Eliminar?};
+    C -- Crear --> D[Mostrar formulario para crear nueva categoría];
+    D --> E[Administrador ingresa nombre de la categoría];
+    E --> F[Validar nombre de la categoría];
+    F -- Válido --> G[Guardar nueva categoría];
+    F -- Inválido --> D;
+    C -- Editar --> H[Mostrar formulario de edición con nombre actual];
+    H --> I[Administrador modifica nombre];
+    I --> J[Validar nuevo nombre];
+    J -- Válido --> K[Actualizar nombre de la categoría];
+    J -- Inválido --> H;
+    C -- Eliminar --> L[Mostrar confirmación de eliminación];
+    L -- Confirmar --> M[Eliminar categoría];
+    G --> N[Mostrar mensaje de éxito];
+    K --> N;
+    M --> N;
+    N --> O[Fin Gestión de Categorías];

@@ -1,0 +1,19 @@
+graph TD
+    A[Administrador accede a Gestión de Usuarios] --> B[Mostrar lista de usuarios];
+    B --> C{¿Administrador selecciona acción Crear, Editar, Eliminar?};
+    C -- Crear --> D[Mostrar formulario para crear nuevo usuario solicitando rol];
+    D --> E[Administrador ingresa datos y rol];
+    E --> F[Validar datos del usuario];
+    F -- Datos válidos --> G[Guardar nueva cuenta de usuario];
+    F -- Datos inválidos --> D;
+    C -- Editar --> H[Mostrar detalles del usuario seleccionado];
+    H --> I[Administrador modifica datos y/o rol];
+    I --> J[Validar datos modificados];
+    J -- Datos válidos --> K[Actualizar cuenta de usuario];
+    J -- Datos inválidos --> H;
+    C -- Eliminar --> L[Mostrar confirmación de eliminación];
+    L -- Confirmar --> M[Eliminar cuenta de usuario];
+    G --> N[Mostrar mensaje de éxito];
+    K --> N;
+    M --> N;
+    N --> O[Fin Gestión de Usuarios];

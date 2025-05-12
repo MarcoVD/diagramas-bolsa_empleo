@@ -1,0 +1,10 @@
+graph TD
+    A[Mostrar opciones de ordenamiento] --> B{¿Usuario selecciona criterio de ordenamiento?};
+    B -- Relevancia --> C[Ordenar resultados por relevancia];
+    B -- Fecha de publicación --> D[Ordenar resultados por fecha de publicación];
+    B -- Salario --> E[Ordenar resultados por salario];
+    C --> F[Mostrar resultados ordenados I.3.3];
+    D --> F;
+    E --> F;
+    B -- No selecciona --> F[Mostrar resultados sin orden específico o por defecto];
+    F --> G[Fin Ordenamiento];

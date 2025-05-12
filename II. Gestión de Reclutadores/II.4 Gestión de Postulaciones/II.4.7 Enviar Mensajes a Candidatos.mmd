@@ -1,0 +1,9 @@
+graph TD
+    A[Reclutador visualiza los detalles de una postulación o el perfil del candidato] --> B[Mostrar opción para enviar mensaje];
+    B --> C[Abrir interfaz de mensajería];
+    C --> D[Reclutador escribe y envía mensaje];
+    D --> E[Guardar mensaje en la base de datos asociado a la postulación/candidato y reclutador];
+    E --> F[Enviar notificación al candidato sobre el nuevo mensaje a través de la plataforma y/o correo electrónico];
+    F --> G[Mostrar mensaje de Mensaje enviado];
+    G --> H[Volver a la lista de postulaciones/perfil];
+    H --> I[Fin Mensajería];

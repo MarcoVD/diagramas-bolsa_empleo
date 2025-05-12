@@ -1,0 +1,7 @@
+graph TD
+    A[Estado de postulación actualizado] --> B[Obtener correo electrónico del candidato];
+    B --> C[Obtener información de la vacante y el nuevo estado];
+    C --> D[Generar correo electrónico de notificación al candidato];
+    D --> E[Enviar correo electrónico al candidato];
+    E --> F[Registrar envío de notificación logs];
+    F --> G[Fin Notificación];

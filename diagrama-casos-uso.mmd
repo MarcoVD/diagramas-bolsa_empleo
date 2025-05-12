@@ -1,0 +1,85 @@
+classDiagram
+    class "Interesado" {
+        + Registrar y autenticar
+        + Crear y editar CV
+        + Buscar vacantes
+        + Postularse a vacantes
+        + Gestionar vacantes guardadas
+        + Recibir notificaciones
+    }
+    
+    class "Reclutador" {
+        + Registrar y autenticar
+        + Gestionar perfil de Secretaría
+        + Publicar vacantes
+        + Gestionar postulaciones
+        + Buscar candidatos
+    }
+    
+    class "Administrador" {
+        + Gestionar usuarios
+        + Gestionar vacantes
+        + Gestionar categorías y habilidades
+        + Generar reportes y estadísticas
+    }
+    
+    class "Gestión de Usuarios" {
+        + Registrarse en el sistema
+        + Iniciar sesión
+        + Recuperar contraseña
+        + Validar datos
+        + Cerrar sesión
+    }
+    
+    class "Gestión de CVs" {
+        + Crear CV
+        + Editar CV
+        + Validar información
+        + Previsualizar CV
+    }
+    
+    class "Gestión de Vacantes" {
+        + Publicar vacante
+        + Editar vacante
+        + Eliminar vacante
+        + Aprobar/rechazar vacante
+        + Filtrar vacantes
+        + Buscar vacantes
+    }
+    
+    class "Gestión de Postulaciones" {
+        + Postularse a vacante
+        + Ver postulaciones realizadas
+        + Filtrar postulaciones
+        + Cambiar estado de postulación
+        + Retirar postulación
+    }
+    
+    class "Búsqueda y Notificaciones" {
+        + Buscar vacantes
+        + Buscar candidatos
+        + Enviar notificaciones
+        + Configurar preferencias
+    }
+    
+    class "Administración del Sistema" {
+        + Gestionar usuarios
+        + Aprobar cuentas
+        + Gestionar categorías
+        + Generar reportes
+    }
+    
+    "Interesado" --> "Gestión de Usuarios"
+    "Interesado" --> "Gestión de CVs"
+    "Interesado" --> "Gestión de Vacantes"
+    "Interesado" --> "Gestión de Postulaciones"
+    "Interesado" --> "Búsqueda y Notificaciones"
+    
+    "Reclutador" --> "Gestión de Usuarios"
+    "Reclutador" --> "Gestión de Vacantes"
+    "Reclutador" --> "Gestión de Postulaciones"
+    "Reclutador" --> "Búsqueda y Notificaciones"
+    
+    "Administrador" --> "Gestión de Usuarios"
+    "Administrador" --> "Gestión de Vacantes"
+    "Administrador" --> "Administración del Sistema"

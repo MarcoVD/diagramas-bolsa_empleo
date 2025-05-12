@@ -1,0 +1,19 @@
+graph TD
+    A[Administrador accede a 'Gestión de Habilidades'] --> B[Mostrar lista de habilidades];
+    B --> C{¿Administrador selecciona acción Crear, Editar, Eliminar?};
+    C -- Crear --> D[Mostrar formulario para crear nueva habilidad];
+    D --> E[Administrador ingresa nombre de la habilidad];
+    E --> F[Validar nombre de la habilidad];
+    F -- Válido --> G[Guardar nueva habilidad];
+    F -- Inválido --> D;
+    C -- Editar --> H[Mostrar formulario de edición con nombre actual];
+    H --> I[Administrador modifica nombre];
+    I --> J[Validar nuevo nombre];
+    J -- Válido --> K[Actualizar nombre de la habilidad];
+    J -- Inválido --> H;
+    C -- Eliminar --> L[Mostrar confirmación de eliminación];
+    L -- Confirmar --> M[Eliminar habilidad];
+    G --> N[Mostrar mensaje de éxito];
+    K --> N;
+    M --> N;
+    N --> O[Fin Gestión de Habilidades];

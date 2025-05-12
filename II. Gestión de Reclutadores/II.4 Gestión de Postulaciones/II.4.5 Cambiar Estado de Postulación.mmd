@@ -1,0 +1,9 @@
+graph TD
+    A[Reclutador visualiza los detalles de una postulación] --> B[Mostrar opciones de cambio de estado: 'En revisión', 'Entrevista', 'Rechazado', 'Contratado'];
+    B --> C{¿Reclutador selecciona un nuevo estado?};
+    C -- Sí --> D[Actualizar el estado de la postulación en la base de datos];
+    D --> E[Notificar al candidato sobre el cambio de estado II.4.6];
+    E --> F[Mostrar mensaje de Estado de postulación actualizado];
+    C -- No --> G[Volver a los detalles de la postulación];
+    F --> H[Fin Cambiar Estado];
+    G --> H;
